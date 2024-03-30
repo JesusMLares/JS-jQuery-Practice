@@ -3,9 +3,25 @@
 <html>
 
 <head>
+    <style>
+        body{background-color: aquamarine;}
+
+        .example-div{
+            background-color: rgb(91, 108, 123);
+        }
+    </style>
     <script src="https://code.jquery.com/jquery-git.js"></script>
     <script>
+        $(document).ready(()=>{
+            $('#create-div').click(()=>{
+                let newDiv = $('<div></div>');
 
+                newDiv.text('This is a sample div!');
+                newDiv.addClass('example-div')
+
+                $('body').append(newDiv);
+            })
+        })
         //Check the readme file in this folder for instructions.
 
         //Your Code Goes Here
@@ -17,7 +33,7 @@
 </head>
 
 <body>
-    <input type="button" value="Click to add new div tag" onclick="createDiv()" />
+    <input type="button" value="Click to add new div tag" id="create-div" />
 </body>
 
 </html>
